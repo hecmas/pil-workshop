@@ -1,0 +1,25 @@
+include "config.pil";
+include "global.pil";
+
+namespace Arith(%N);
+    // Constant Polynomials
+    pol constant SETA, SETB, SETC, SETD, SETE;
+    pol constant LATCH;
+
+    // Input Polynomials
+    pol commit freeIn;
+
+    // State Variables
+    pol commit a, b, c, d, e;
+
+    // Constraints
+    freeIn in Global.BYTE2;
+
+    a' = SETA*(freeIn - a) + a;
+    b' = SETB*(freeIn - b) + b;
+    c' = SETC*(freeIn - c) + c;
+    d' = SETD*(freeIn - d) + d;
+    e' = SETE*(freeIn - e) + e;
+
+    pol mulSum = a*b + c  - (d * 2**32 + e);
+    LATCH *  mulSum = 0; 

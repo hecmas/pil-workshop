@@ -1,0 +1,8 @@
+include "config.pil";
+
+namespace sm1(%N);
+  pol commit a, b, c;
+
+namespace sm2(%N);
+  pol commit a, b, c;
+  {a, b, c} is {sm1.a, sm1.b, sm1.c};

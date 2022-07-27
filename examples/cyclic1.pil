@@ -1,0 +1,10 @@
+include "config.pil";
+
+namespace Cyclic1(%N);
+    pol commit a;
+    pol commit b;
+
+    pol inter = (a+1)*a;
+
+    inter*(a-1) = 0;
+    b' = b+a;

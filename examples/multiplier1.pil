@@ -1,0 +1,10 @@
+namespace Multiplier1(8);
+  // Input Polynomials
+  pol commit freeIn1;
+  pol commit freeIn2;
+    
+  // State Variables
+  pol commit out;
+
+  // Constraints
+  out = freeIn1*freeIn2;

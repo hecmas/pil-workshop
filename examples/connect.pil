@@ -1,0 +1,31 @@
+include "config.pil";
+
+namespace Connect(%N);
+    // Constant Polynomials
+    pol constant SA, SB, SC;
+
+    // State Variables
+    pol commit a, b, c;
+
+    {a, b, c} connect {SA, SB, SC};
+
+namespace Plonk(%N);
+    // Constant Polynomials
+    pol constant SA, SB, SC;
+    pol constant QL, QR, QM, QO, QC;
+    pol constant L1;  // 1, 0, ..., 0
+
+    // State Variables
+    pol commit a, b, c;
+
+    // Public Input
+    public publicInput = a(0);
+
+    // Intermediate Computations
+    pol ab = a*b;
+
+    {a, b, c} connect {SA, SB, SC};
+
+    QL*a + QR*b + QM*ab + QO*c + QC = 0;
+
+    L1 * (a - :publicInput) = 0;

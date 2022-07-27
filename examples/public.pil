@@ -1,0 +1,14 @@
+include "config.pil";
+
+namespace Public(%N);
+  // Constant Polynomials
+  pol constant L1;  // 1, 0, ..., 0
+  
+  // State Variables
+  pol commit a;
+  
+  // Public Inputs
+  public publicInput = a(0);
+  
+  // Constraints
+  L1 * (a - :publicInput) = 0;

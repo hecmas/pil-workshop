@@ -1,0 +1,17 @@
+include "config.pil";
+
+namespace Multiplier2(%N);
+  // Constant Polynomials
+  pol constant SET; // 1, 0, 1, 0, ...
+    
+  // Input Polynomials
+  pol commit freeIn;
+    
+  // State Variables
+  pol commit out;
+
+  // Intermediate Computations
+  pol mul = out*freeIn;
+
+  // Constraints
+  out' = SET*freeIn + (1 - SET)*mul;

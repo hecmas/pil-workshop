@@ -1,0 +1,11 @@
+namespace sm1(2**28);
+  pol commit a, b, c;
+  pol commit sel;
+
+namespace sm2(2**23);
+  pol commit a, b, c;
+  pol commit sel;
+
+  sel {a, b, c} is sm1.sel {sm1.a, sm1.b, sm1.c};
+  // {a, b, c} is sm1.sel {sm1.a, sm1.b, sm1.c};     <-- No selector on the first
+  // sel {a, b, c} is {sm1.a, sm1.b, sm1.c};        <-- No selector on the second

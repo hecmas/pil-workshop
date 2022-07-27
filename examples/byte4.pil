@@ -1,0 +1,33 @@
+include "../config.pil";
+include "../global.pil";
+
+namespace Byte4(%N);
+    // Constant Polynomials
+    pol constant SET; // 1, 0, 1, 0, ...
+
+    // Input Polynomials
+    pol commit freeIN;
+
+    // State Variables
+    pol commit out;
+
+    freeIN in Global.BYTE2;
+
+    out' = SET*freeIN + (1-SET)*(out * 2**16 + freeIN);
+
+// include "config.pil";
+// pol constant BYTE2;
+
+// namespace Byte4(%N);
+//     // Constant Polynomials
+//     pol constant SET; // 1, 0, 1, 0, ...
+
+//     // Input Polynomials
+//     pol commit freeIN;
+
+//     // State Variables
+//     pol commit out;
+
+//     freeIN in GLOBAL.BYTE2;
+
+//     out' = SET*freeIN + (1-SET)*(out * 2**16 + freeIN);

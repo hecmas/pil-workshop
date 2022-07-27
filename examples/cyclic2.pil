@@ -1,0 +1,12 @@
+include "config.pil";
+
+namespace Cyclic2(%N);
+    pol constant SEL; // 1,1,..,1,0
+
+    pol commit a;
+    pol commit b;
+
+    pol inter = (a+1)*a;
+
+    inter*(a-1) = 0;
+    b' =  SEL*(b+a) + (1-SEL);
