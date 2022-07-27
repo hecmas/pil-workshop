@@ -1,0 +1,20 @@
+include "config.pil";
+
+
+// Permutation
+namespace sm1(%N);
+    pol commit a, b, c;
+
+namespace sm2(%N);
+    pol commit d, e, f;
+    {d, e, f} is {sm1.a, sm1.b, sm1.c};
+
+
+
+// Inclusion
+namespace sm3(%N);
+    pol commit a, b, c;
+
+namespace sm4(%N);
+    pol commit d, e, f;
+    {d, e, f} in {sm1.a, sm1.b, sm1.c};
